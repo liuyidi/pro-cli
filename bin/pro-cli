@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const __root = process.cwd();
+const program = require('commander');		   // 获取命令行中输入的信息
+const chalk = require('chalk');
+const pkg = require('../package.json');
+
+const generateCli = require('../lib/generate');
+
+program.version(pkg.version)
+	.usage('[options] <file ...>')
+	.option('new', '创建初始项目，默认安装npm_modules')
+	.option('new --no-auto-install', '创建新项目,默认不安装npm_modules')
+	.option('g, generate', '选择模板，生成初始项目')
+	.parse(process.argv);
+
+program.on('exit', function () {
+	console.log('exit...')
+})
+
+if (program.generate) {
+	generateCli(process.argv)
+}

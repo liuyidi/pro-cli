@@ -1,0 +1,25 @@
+{
+  "name": "project-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "bin": {
+    "pro-cli": "./bin/pro-cli"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "download-git-repo": "^1.0.2",
+    "inquirer": "^5.2.0",
+    "mkdirp": "^0.5.1",
+    "ora": "^2.0.0",
+    "shelljs": "^0.8.1",
+    "which": "^1.3.0"
+  }
+}
