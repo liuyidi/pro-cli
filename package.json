@@ -10,7 +10,7 @@
   "bin": {
     "pro-cli": "./bin/pro-cli"
   },
-  "author": "",
+  "author": "liuyidi",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.3.2",
