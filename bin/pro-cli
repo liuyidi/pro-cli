@@ -1,23 +1,29 @@
 #!/usr/bin/env node
 
 const __root = process.cwd();
-const program = require('commander');		   // 获取命令行中输入的信息
+const program = require('commander');
 const chalk = require('chalk');
 const pkg = require('../package.json');
-
-const generateCli = require('../lib/generate');
+const generateCli = require('../lib');
 
 program.version(pkg.version)
 	.usage('[options] <file ...>')
 	.option('new', '创建初始项目，默认安装npm_modules')
 	.option('new --no-auto-install', '创建新项目,默认不安装npm_modules')
 	.option('g, generate', '选择模板，生成初始项目')
+	.on('--help', function () {
+		console.log(' Commands: \n')
+		console.log(' static 静态活动页模版 \n');
+		console.log(' spa 中后台系统模版 \n');
+		console.log(' h5 移动端h5页面模版 \n');
+		console.log(' ssr node-ssr模版 \n');
+	})
 	.parse(process.argv);
+
 
 program.on('exit', function () {
 	console.log('exit...')
 })
 
-if (program.generate) {
-	generateCli(process.argv)
-}
+generateCli(process.argv)
+

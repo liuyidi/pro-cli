@@ -1,3 +1,15 @@
-![Build Staus](https://travis-ci.com/liuyidi/pro-cli.svg?branch=master)
 # pro-cli
-Cli tool of vue-template
+
+前端脚手架
+
+- 支持模版页：
+1. 静态活动页模版
+2. 中后台系统模版
+3. 移动端h5页面模版
+4. node-ssr模版
+...
+
+- 支持功能块
+1. 组件
+2. model
+...
