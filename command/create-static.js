@@ -41,6 +41,8 @@ const QUESTIONS = [
 
 const TEMPLATE = 'vuejs-templates/webpack'
 
-module.exports = inquirer.propmt(QUESTIONS).then(ans => {
-    init(TEMPLATE, settings)    
-})
+module.exports = () => {
+	return inquirer.prompt(QUESTIONS).then(answers => {
+		init(TEMPLATE, answers)    
+	})
+}

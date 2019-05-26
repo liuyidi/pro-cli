@@ -29,6 +29,15 @@ const QUESTIONS = [
 	},
 	{
 		type: 'input',
+		name: 'autoInstallNpm',
+		message: '是否自动安装npm(true或false): ',
+		default: true,
+		validate: (val) => {
+			return Boolean(val);
+		}
+	},
+	{
+		type: 'input',
 		name: 'port',
 		message: '本地开发的端口号：',
 		default: Math.floor(Math.random() * 7000 + 3000),
@@ -41,6 +50,8 @@ const QUESTIONS = [
 
 const TEMPLATE = 'vuejs-templates/webpack'
 
-module.exports = inquirer.propmt(QUESTIONS).then(settings => {
-    init(TEMPLATE, settings)    
-})
+module.exports = () => {
+	return inquirer.prompt(QUESTIONS).then(answers => {
+		init(TEMPLATE, answers)    
+	})
+}
